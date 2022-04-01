@@ -35,9 +35,10 @@ def import_JSON():
 
 def merge_files(json_file, txt_file):
     key = input("Enter key name for added dictionary element: ")
+    json_key = input("Enter key in JSON file to correlate txt key values: ")
     for i in txt_file:
         for j in json_file:
-            if (i == j['STATES']):
+            if (i == j[json_key]):
                 j[key] = txt_file[i]
 
     return json_file
